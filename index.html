@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retention - Website Analytics & Visitor Tracking</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cookie-popup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
    <script>
     (function(w,d,s,o,f,js,fjs){
@@ -174,6 +175,22 @@
         </div>
     </footer>
 
+    <div class="cookie-popup" id="cookiePopup">
+        <h3>We Value Your Privacy</h3>
+        <p>We use cookies and similar technologies to collect data about your visit to our website. This helps us improve your experience and provide better services. The data we collect includes:</p>
+        <ul style="margin: 0 0 15px 0; padding-left: 20px; color: #6b7280; font-size: 14px;">
+            <li>IP address (for security and analytics purposes)</li>
+            <li>Pages you visit and time spent</li>
+            <li>Device and browser information</li>
+            <li>Geographic location (country/region)</li>
+            <li>Referral sources</li>
+        </ul>
+        <div class="cookie-popup-buttons">
+            <button class="decline" onclick="declineCookies()">Decline</button>
+            <button class="accept" onclick="acceptCookies()">Accept</button>
+        </div>
+    </div>
+
     <script>
         // Add animation class to elements when they come into view
         const observer = new IntersectionObserver((entries) => {
@@ -187,6 +204,28 @@
         document.querySelectorAll('.feature-card, .step, .price-card').forEach((el) => {
             observer.observe(el);
         });
+
+        // Cookie consent popup functionality
+        function showCookiePopup() {
+            if (!localStorage.getItem('cookieConsent')) {
+                document.getElementById('cookiePopup').classList.add('show');
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookiePopup').classList.remove('show');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookiePopup').classList.remove('show');
+            // Disable tracking if declined
+            window['rt'] = function() {};
+        }
+
+        // Show popup when page loads
+        window.addEventListener('load', showCookiePopup);
     </script>
 </body>
 </html> 
