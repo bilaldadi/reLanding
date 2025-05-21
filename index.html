@@ -23,12 +23,22 @@
     <header class="header">
         <nav class="nav">
             <a href="#" class="logo" data-aos="fade-right">Retention</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links">
                 <li data-aos="fade-down" data-aos-delay="100"><a href="#features">Features</a></li>
                 <li data-aos="fade-down" data-aos-delay="200"><a href="#how-it-works">How It Works</a></li>
                 <li data-aos="fade-down" data-aos-delay="300"><a href="#pricing">Pricing</a></li>
                 <li data-aos="fade-down" data-aos-delay="400"><a href="https://retention-backend.vercel.app/auth/login" class="btn btn-primary">Sign In</a></li>
             </ul>
+            <label class="theme-switch" data-aos="fade-left">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider">
+                    <i class="fas fa-sun sun"></i>
+                    <i class="fas fa-moon moon"></i>
+                </span>
+            </label>
         </nav>
     </header>
 
@@ -199,6 +209,51 @@
             duration: 800,
             once: true,
             offset: 100
+        });
+
+        // Mobile menu functionality
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navLinks = document.querySelector('.nav-links');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!navLinks.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Close mobile menu when a navigation link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                const navLinks = document.querySelector('.nav-links');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeToggle.checked = true;
+        }
+
+        // Theme toggle event listener
+        themeToggle.addEventListener('change', function() {
+            if (this.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
         });
 
         // Cookie consent popup functionality
