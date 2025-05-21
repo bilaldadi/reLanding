@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="cookie-popup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
    <script>
     (function(w,d,s,o,f,js,fjs){
         w['Retention']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};
@@ -21,44 +22,44 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <a href="#" class="logo">Retention</a>
+            <a href="#" class="logo" data-aos="fade-right">Retention</a>
             <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="https://retention-backend.vercel.app/auth/login" class="btn btn-primary">Sign In</a></li>
+                <li data-aos="fade-down" data-aos-delay="100"><a href="#features">Features</a></li>
+                <li data-aos="fade-down" data-aos-delay="200"><a href="#how-it-works">How It Works</a></li>
+                <li data-aos="fade-down" data-aos-delay="300"><a href="#pricing">Pricing</a></li>
+                <li data-aos="fade-down" data-aos-delay="400"><a href="https://retention-backend.vercel.app/auth/login" class="btn btn-primary">Sign In</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="hero-content animate">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
             <h1>Understand Your Visitors Better</h1>
             <p>Track, analyze, and optimize your website's performance with powerful analytics and visitor tracking tools.</p>
             <div>
-                <a href="https://retention-backend.vercel.app/" class="btn btn-primary">Get Started Free</a>
-                <a href="#how-it-works" class="btn btn-secondary">Learn More</a>
+                <a href="https://retention-backend.vercel.app/" class="btn btn-primary" data-aos="zoom-in" data-aos-delay="200">Get Started Free</a>
+                <a href="#how-it-works" class="btn btn-secondary" data-aos="zoom-in" data-aos-delay="300">Learn More</a>
             </div>
         </div>
     </section>
 
     <section id="features" class="features">
         <div class="features-grid">
-            <div class="feature-card animate">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="feature-icon">
                     <i class="fas fa-chart-line"></i>
                 </div>
                 <h3>Real-time Analytics</h3>
                 <p>Monitor your website's performance with detailed real-time analytics and insights.</p>
             </div>
-            <div class="feature-card animate">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="feature-icon">
                     <i class="fas fa-users"></i>
                 </div>
                 <h3>Visitor Tracking</h3>
                 <p>Track visitor behavior, session duration, and engagement metrics to optimize your content.</p>
             </div>
-            <div class="feature-card animate">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="feature-icon">
                     <i class="fas fa-clock"></i>
                 </div>
@@ -70,21 +71,21 @@
 
     <section id="how-it-works" class="how-it-works">
         <div class="steps">
-            <div class="step animate">
+            <div class="step" data-aos="fade-right" data-aos-delay="100">
                 <div class="step-number">1</div>
                 <div class="step-content">
                     <h3>Add Tracking Code</h3>
                     <p>Copy and paste our simple tracking code into your website's HTML.</p>
                 </div>
             </div>
-            <div class="step animate">
+            <div class="step" data-aos="fade-right" data-aos-delay="200">
                 <div class="step-number">2</div>
                 <div class="step-content">
                     <h3>Start Collecting Data</h3>
                     <p>Our system automatically begins collecting visitor data and analytics.</p>
                 </div>
             </div>
-            <div class="step animate">
+            <div class="step" data-aos="fade-right" data-aos-delay="300">
                 <div class="step-number">3</div>
                 <div class="step-content">
                     <h3>View Insights</h3>
@@ -96,7 +97,7 @@
 
     <section id="pricing" class="pricing">
         <div class="pricing-grid">
-            <div class="price-card animate">
+            <div class="price-card" data-aos="fade-up" data-aos-delay="100">
                 <h3>Free</h3>
                 <div class="price">$0</div>
                 <ul>
@@ -107,7 +108,7 @@
                 </ul>
                 <a href="https://retention-backend.vercel.app/" class="btn btn-primary">Get Started</a>
             </div>
-            <div class="price-card popular animate">
+            <div class="price-card popular" data-aos="fade-up" data-aos-delay="200">
                 <h3>Pro</h3>
                 <div class="price">$29</div>
                 <ul>
@@ -119,7 +120,7 @@
                 </ul>
                 <a href="https://retention-backend.vercel.app/" class="btn btn-primary">Get Started</a>
             </div>
-            <div class="price-card animate">
+            <div class="price-card" data-aos="fade-up" data-aos-delay="300">
                 <h3>Enterprise</h3>
                 <div class="price">$99</div>
                 <ul>
@@ -191,18 +192,13 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Add animation class to elements when they come into view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        });
-
-        document.querySelectorAll('.feature-card, .step, .price-card').forEach((el) => {
-            observer.observe(el);
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
         });
 
         // Cookie consent popup functionality
