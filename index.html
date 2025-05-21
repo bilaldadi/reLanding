@@ -6,11 +6,13 @@
     <title>Retention - Website Analytics & Visitor Tracking</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script>
+   <script>
     (function(w,d,s,o,f,js,fjs){
         w['Retention']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};
         js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];
-        js.id='retention-tracker';js.src='https://retention-frontend.vercel.app/tracking.js';
+        js.id='retention-tracker';
+        js.src='https://retention-backend.vercel.app/tracking.js';
+        js.setAttribute('data-website-id', '682e1d584d84bca92b81e633');
         js.async=1;fjs.parentNode.insertBefore(js,fjs);
     })(window,document,'script','rt','682e1d584d84bca92b81e633');
     </script>
