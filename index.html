@@ -187,18 +187,94 @@
     </footer>
 
     <div class="cookie-popup" id="cookiePopup">
-        <h3>We Value Your Privacy</h3>
-        <p>We use cookies and similar technologies to collect data about your visit to our website. This helps us improve your experience and provide better services. The data we collect includes:</p>
-        <ul style="margin: 0 0 15px 0; padding-left: 20px; color: #6b7280; font-size: 14px;">
-            <li>IP address (for security and analytics purposes)</li>
-            <li>Pages you visit and time spent</li>
-            <li>Device and browser information</li>
-            <li>Geographic location (country/region)</li>
-            <li>Referral sources</li>
-        </ul>
-        <div class="cookie-popup-buttons">
-            <button class="decline" onclick="declineCookies()">Decline</button>
-            <button class="accept" onclick="acceptCookies()">Accept</button>
+        <div class="cookie-popup-content">
+            <div class="cookie-header">
+                <h3>We use cookies</h3>
+                <p>Your data will be sent to global third-party providers to identify you and send marketing messages from different companies. By clicking "Accept All", you consent to this data sharing.</p>
+            </div>
+            <div class="cookie-popup-buttons">
+                <button class="btn btn-secondary" onclick="showCookieSettings()">Configure</button>
+                <button class="btn btn-primary" onclick="acceptAllCookies()">Accept All</button>
+            </div>
+        </div>
+        
+        <div class="cookie-settings" id="cookieSettings">
+            <div class="cookie-options">
+                <div class="cookie-option">
+                    <label class="cookie-label">
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="essential" checked disabled>
+                            <span class="toggle-slider"></span>
+                        </div>
+                        <div class="cookie-text">
+                            <span class="checkbox-label">Essential Cookies</span>
+                            <span class="cookie-description">Required for the website to function properly. Cannot be disabled.</span>
+                        </div>
+                        <i class="fas fa-shield-alt cookie-icon"></i>
+                    </label>
+                </div>
+                
+                <div class="cookie-option">
+                    <label class="cookie-label">
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="analytics" checked>
+                            <span class="toggle-slider"></span>
+                        </div>
+                        <div class="cookie-text">
+                            <span class="checkbox-label">Analytics Data</span>
+                            <span class="cookie-description">Your data will be sent to global third-party providers to analyze your behavior and improve our services.</span>
+                        </div>
+                        <i class="fas fa-chart-line cookie-icon"></i>
+                    </label>
+                </div>
+                
+                <div class="cookie-option">
+                    <label class="cookie-label">
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="device" checked>
+                            <span class="toggle-slider"></span>
+                        </div>
+                        <div class="cookie-text">
+                            <span class="checkbox-label">Device Information</span>
+                            <span class="cookie-description">Your device data will be shared with our partners to provide personalized experiences and targeted content.</span>
+                        </div>
+                        <i class="fas fa-mobile-alt cookie-icon"></i>
+                    </label>
+                </div>
+                
+                <div class="cookie-option">
+                    <label class="cookie-label">
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="location" checked>
+                            <span class="toggle-slider"></span>
+                        </div>
+                        <div class="cookie-text">
+                            <span class="checkbox-label">Location Data</span>
+                            <span class="cookie-description">Your location information will be used by our marketing partners to deliver region-specific content and offers.</span>
+                        </div>
+                        <i class="fas fa-map-marker-alt cookie-icon"></i>
+                    </label>
+                </div>
+                
+                <div class="cookie-option">
+                    <label class="cookie-label">
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="marketing" checked>
+                            <span class="toggle-slider"></span>
+                        </div>
+                        <div class="cookie-text">
+                            <span class="checkbox-label">Marketing & Advertising</span>
+                            <span class="cookie-description">Your data will be used to send you personalized marketing messages and advertisements from our trusted partners.</span>
+                        </div>
+                        <i class="fas fa-bullhorn cookie-icon"></i>
+                    </label>
+                </div>
+            </div>
+
+            <div class="cookie-popup-buttons">
+                <button class="btn btn-secondary" onclick="hideCookieSettings()">Back</button>
+                <button class="btn btn-primary" onclick="savePreferences()">Save Preferences</button>
+            </div>
         </div>
     </div>
 
@@ -258,21 +334,47 @@
 
         // Cookie consent popup functionality
         function showCookiePopup() {
-            if (!localStorage.getItem('cookieConsent')) {
+            if (!localStorage.getItem('cookiePreferences')) {
                 document.getElementById('cookiePopup').classList.add('show');
             }
         }
 
-        function acceptCookies() {
-            localStorage.setItem('cookieConsent', 'accepted');
+        function showCookieSettings() {
+            document.querySelector('.cookie-popup-content').style.display = 'none';
+            document.getElementById('cookieSettings').style.display = 'block';
+        }
+
+        function hideCookieSettings() {
+            document.querySelector('.cookie-popup-content').style.display = 'block';
+            document.getElementById('cookieSettings').style.display = 'none';
+        }
+
+        function acceptAllCookies() {
+            const preferences = {
+                analytics: true,
+                device: true,
+                location: true,
+                ip: true
+            };
+            localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
             document.getElementById('cookiePopup').classList.remove('show');
         }
 
-        function declineCookies() {
-            localStorage.setItem('cookieConsent', 'declined');
+        function savePreferences() {
+            const preferences = {
+                analytics: document.getElementById('analytics').checked,
+                device: document.getElementById('device').checked,
+                location: document.getElementById('location').checked,
+                marketing: document.getElementById('marketing').checked
+            };
+
+            localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
             document.getElementById('cookiePopup').classList.remove('show');
-            // Disable tracking if declined
-            window['rt'] = function() {};
+
+            // Configure tracking based on preferences
+            if (!preferences.analytics) {
+                window['rt'] = function() {};
+            }
         }
 
         // Show popup when page loads
