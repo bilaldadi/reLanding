@@ -1,0 +1,170 @@
+const translations = {
+    en: {
+        // Navigation
+        features: "Features",
+        howItWorks: "How It Works",
+        pricing: "Pricing",
+        signIn: "Sign In",
+        
+        // Hero Section
+        heroTitle: "Understand Your Visitors Better",
+        heroSubtitle: "Track, analyze, and optimize your website's performance with powerful analytics and visitor tracking tools.",
+        getStarted: "Get Started Free",
+        learnMore: "Learn More",
+        
+        // Features Section
+        realTimeAnalytics: "Real-time Analytics",
+        realTimeAnalyticsDesc: "Monitor your website's performance with detailed real-time analytics and insights.",
+        visitorTracking: "Visitor Tracking",
+        visitorTrackingDesc: "Track visitor behavior, session duration, and engagement metrics to optimize your content.",
+        timeOnSite: "Time on Site",
+        timeOnSiteDesc: "Understand how long visitors stay on your site and which pages keep them engaged.",
+        
+        // How It Works Section
+        step1Title: "Add Tracking Code",
+        step1Desc: "Copy and paste our simple tracking code into your website's HTML.",
+        step2Title: "Start Collecting Data",
+        step2Desc: "Our system automatically begins collecting visitor data and analytics.",
+        step3Title: "View Insights",
+        step3Desc: "Access detailed reports and insights through your dashboard.",
+        
+        // Pricing Section
+        free: "Free",
+        pro: "Pro",
+        enterprise: "Enterprise",
+        basicAnalytics: "Basic Analytics",
+        upTo1000Visitors: "Up to 1,000 visitors/month",
+        sevenDayRetention: "7-day data retention",
+        basicSupport: "Basic support",
+        advancedAnalytics: "Advanced Analytics",
+        upTo10000Visitors: "Up to 10,000 visitors/month",
+        thirtyDayRetention: "30-day data retention",
+        prioritySupport: "Priority support",
+        customTracking: "Custom tracking events",
+        fullAnalytics: "Full Analytics Suite",
+        unlimitedVisitors: "Unlimited visitors",
+        ninetyDayRetention: "90-day data retention",
+        support247: "24/7 support",
+        customIntegrations: "Custom integrations",
+        apiAccess: "API access",
+        contactSales: "Contact Sales",
+        
+        // Footer
+        product: "Product",
+        company: "Company",
+        resources: "Resources",
+        legal: "Legal",
+        about: "About",
+        blog: "Blog",
+        careers: "Careers",
+        documentation: "Documentation",
+        apiReference: "API Reference",
+        support: "Support",
+        privacyPolicy: "Privacy Policy",
+        termsOfService: "Terms of Service",
+        cookiePolicy: "Cookie Policy",
+        copyright: "© 2025 Retention. All rights reserved.",
+        
+        // Cookie Popup
+        cookieTitle: "We use cookies",
+        cookieDescription: "Your data will be sent to global third-party providers to identify you and send marketing messages from different companies. By clicking \"Accept All\", you consent to this data sharing.",
+        configure: "Configure",
+        acceptAll: "Accept",
+        back: "Back",
+        savePreferences: "Save Preferences",
+        essentialCookies: "Essential Cookies",
+        essentialCookiesDesc: "Required for the website to function properly. Cannot be disabled.",
+        analyticsData: "Analytics Data",
+        analyticsDataDesc: "Your data will be sent to global third-party providers to analyze your behavior and improve our services.",
+        deviceInfo: "Device Information",
+        deviceInfoDesc: "Your device data will be shared with our partners to provide personalized experiences and targeted content.",
+        locationData: "Location Data",
+        locationDataDesc: "Your location information will be used by our marketing partners to deliver region-specific content and offers.",
+        marketing: "Marketing & Advertising",
+        marketingDesc: "Your data will be used to send you personalized marketing messages and advertisements from our trusted partners."
+    },
+    ar: {
+        // Navigation
+        features: "المميزات",
+        howItWorks: "كيف يعمل",
+        pricing: "الأسعار",
+        signIn: "تسجيل الدخول",
+        
+        // Hero Section
+        heroTitle: "افهم زوارك بشكل أفضل",
+        heroSubtitle: "تتبع وتحليل وتحسين أداء موقعك باستخدام أدوات تحليل وتتبع الزوار القوية.",
+        getStarted: "ابدأ مجاناً",
+        learnMore: "اعرف المزيد",
+        
+        // Features Section
+        realTimeAnalytics: "تحليلات في الوقت الفعلي",
+        realTimeAnalyticsDesc: "راقب أداء موقعك مع تحليلات ورؤى مفصلة في الوقت الفعلي.",
+        visitorTracking: "تتبع الزوار",
+        visitorTrackingDesc: "تتبع سلوك الزوار ومدة الجلسة ومقاييس المشاركة لتحسين المحتوى الخاص بك.",
+        timeOnSite: "الوقت على الموقع",
+        timeOnSiteDesc: "افهم المدة التي يقضيها الزوار على موقعك وأي الصفحات تحافظ على تفاعلهم.",
+        
+        // How It Works Section
+        step1Title: "أضف كود التتبع",
+        step1Desc: "انسخ والصق كود التتبع البسيط الخاص بنا في HTML الخاص بموقعك.",
+        step2Title: "ابدأ جمع البيانات",
+        step2Desc: "يبدأ نظامنا تلقائياً في جمع بيانات الزوار والتحليلات.",
+        step3Title: "عرض الرؤى",
+        step3Desc: "الوصول إلى التقارير والرؤى المفصلة من خلال لوحة التحكم الخاصة بك.",
+        
+        // Pricing Section
+        free: "مجاني",
+        pro: "احترافي",
+        enterprise: "المؤسسات",
+        basicAnalytics: "تحليلات أساسية",
+        upTo1000Visitors: "حتى 1,000 زائر/شهر",
+        sevenDayRetention: "احتفاظ بالبيانات لمدة 7 أيام",
+        basicSupport: "دعم أساسي",
+        advancedAnalytics: "تحليلات متقدمة",
+        upTo10000Visitors: "حتى 10,000 زائر/شهر",
+        thirtyDayRetention: "احتفاظ بالبيانات لمدة 30 يوم",
+        prioritySupport: "دعم ذو أولوية",
+        customTracking: "أحداث تتبع مخصصة",
+        fullAnalytics: "مجموعة التحليلات الكاملة",
+        unlimitedVisitors: "زوار غير محدود",
+        ninetyDayRetention: "احتفاظ بالبيانات لمدة 90 يوم",
+        support247: "دعم على مدار الساعة",
+        customIntegrations: "تكاملات مخصصة",
+        apiAccess: "وصول API",
+        contactSales: "اتصل بالمبيعات",
+        
+        // Footer
+        product: "المنتج",
+        company: "الشركة",
+        resources: "الموارد",
+        legal: "قانوني",
+        about: "حول",
+        blog: "المدونة",
+        careers: "وظائف",
+        documentation: "التوثيق",
+        apiReference: "مرجع API",
+        support: "الدعم",
+        privacyPolicy: "سياسة الخصوصية",
+        termsOfService: "شروط الخدمة",
+        cookiePolicy: "سياسة ملفات تعريف الارتباط",
+        copyright: "© 2025 Retention. جميع الحقوق محفوظة.",
+        
+        // Cookie Popup
+        cookieTitle: "نحن نستخدم ملفات تعريف الارتباط",
+        cookieDescription: "سيتم إرسال بياناتك إلى مزودي الطرف الثالث العالميين لتحديد هويتك وإرسال رسائل تسويقية من شركات مختلفة. بالنقر على \"قبول الكل\"، فإنك توافق على مشاركة هذه البيانات.",
+        configure: "ضبط",
+        acceptAll: "قبول",
+        back: "رجوع",
+        savePreferences: "حفظ التفضيلات",
+        essentialCookies: "ملفات تعريف الارتباط الأساسية",
+        essentialCookiesDesc: "مطلوبة لكي يعمل الموقع بشكل صحيح. لا يمكن تعطيلها.",
+        analyticsData: "بيانات التحليلات",
+        analyticsDataDesc: "سيتم إرسال بياناتك إلى مزودي الطرف الثالث العالميين لتحليل سلوكك وتحسين خدماتنا.",
+        deviceInfo: "معلومات الجهاز",
+        deviceInfoDesc: "سيتم مشاركة بيانات جهازك مع شركائنا لتقديم تجارب مخصصة ومحتوى مستهدف.",
+        locationData: "بيانات الموقع",
+        locationDataDesc: "سيتم استخدام معلومات موقعك من قبل شركائنا التسويقيين لتقديم محتوى وعروض خاصة بالمنطقة.",
+        marketing: "التسويق والإعلان",
+        marketingDesc: "سيتم استخدام بياناتك لإرسال رسائل تسويقية وإعلانات مخصصة من شركائنا الموثوق بهم."
+    }
+}; 

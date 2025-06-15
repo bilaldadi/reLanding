@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="cookie-popup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-   <script>
+    <script src="translations.js"></script>
+    <script>
     (function(w,d,s,o,f,js,fjs){
         w['Retention']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};
         js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];
@@ -18,6 +19,7 @@
         js.async=1;fjs.parentNode.insertBefore(js,fjs);
     })(window,document,'script','rt','682e1d584d84bca92b81e633');
     </script>
+ 
 </head>
 <body>
     <header class="header">
@@ -27,28 +29,40 @@
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links">
-                <li data-aos="fade-down" data-aos-delay="100"><a href="#features">Features</a></li>
-                <li data-aos="fade-down" data-aos-delay="200"><a href="#how-it-works">How It Works</a></li>
-                <li data-aos="fade-down" data-aos-delay="300"><a href="#pricing">Pricing</a></li>
-                <li data-aos="fade-down" data-aos-delay="400"><a href="https://retention-backend.vercel.app/auth/login" class="btn btn-primary">Sign In</a></li>
+                <li data-aos="fade-down" data-aos-delay="100"><a href="#features" data-i18n="features">Features</a></li>
+                <li data-aos="fade-down" data-aos-delay="200"><a href="#how-it-works" data-i18n="howItWorks">How It Works</a></li>
+                <li data-aos="fade-down" data-aos-delay="300"><a href="#pricing" data-i18n="pricing">Pricing</a></li>
+                <label class="theme-switch" data-aos="fade-left">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider">
+                        <i class="fas fa-sun sun"></i>
+                        <i class="fas fa-moon moon"></i>
+                    </span>
+                </label>
+                <li data-aos="fade-down" data-aos-delay="400"><a href="https://retention-backend.vercel.app/auth/login" class="btn btn-primary" data-i18n="signIn">Sign In</a></li>
+                <li class="language-switcher" data-aos="fade-down" data-aos-delay="500">
+                    <div class="custom-select" onclick="toggleLanguageDropdown()">
+                        <div class="selected-option">
+                            <span id="selectedLanguage">English</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="options" id="languageOptions">
+                            <div class="option" onclick="changeLanguage('en')">English</div>
+                            <div class="option" onclick="changeLanguage('ar')">العربية</div>
+                        </div>
+                    </div>
+                </li>
             </ul>
-            <label class="theme-switch" data-aos="fade-left">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider">
-                    <i class="fas fa-sun sun"></i>
-                    <i class="fas fa-moon moon"></i>
-                </span>
-            </label>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-            <h1>Understand Your Visitors Better</h1>
-            <p>Track, analyze, and optimize your website's performance with powerful analytics and visitor tracking tools.</p>
+            <h1 data-i18n="heroTitle">Understand Your Visitors Better</h1>
+            <p data-i18n="heroSubtitle">Track, analyze, and optimize your website's performance with powerful analytics and visitor tracking tools.</p>
             <div>
-                <a href="https://retention-backend.vercel.app/" class="btn btn-primary" data-aos="zoom-in" data-aos-delay="200">Get Started Free</a>
-                <a href="#how-it-works" class="btn btn-secondary" data-aos="zoom-in" data-aos-delay="300">Learn More</a>
+                <a href="https://retention-backend.vercel.app/" class="btn btn-primary" data-aos="zoom-in" data-aos-delay="200" data-i18n="getStarted">Get Started Free</a>
+                <a href="#how-it-works" class="btn btn-secondary" data-aos="zoom-in" data-aos-delay="300" data-i18n="learnMore">Learn More</a>
             </div>
         </div>
     </section>
@@ -59,22 +73,22 @@
                 <div class="feature-icon">
                     <i class="fas fa-chart-line"></i>
                 </div>
-                <h3>Real-time Analytics</h3>
-                <p>Monitor your website's performance with detailed real-time analytics and insights.</p>
+                <h3 data-i18n="realTimeAnalytics">Real-time Analytics</h3>
+                <p data-i18n="realTimeAnalyticsDesc">Monitor your website's performance with detailed real-time analytics and insights.</p>
             </div>
             <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="feature-icon">
                     <i class="fas fa-users"></i>
                 </div>
-                <h3>Visitor Tracking</h3>
-                <p>Track visitor behavior, session duration, and engagement metrics to optimize your content.</p>
+                <h3 data-i18n="visitorTracking">Visitor Tracking</h3>
+                <p data-i18n="visitorTrackingDesc">Track visitor behavior, session duration, and engagement metrics to optimize your content.</p>
             </div>
             <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="feature-icon">
                     <i class="fas fa-clock"></i>
                 </div>
-                <h3>Time on Site</h3>
-                <p>Understand how long visitors stay on your site and which pages keep them engaged.</p>
+                <h3 data-i18n="timeOnSite">Time on Site</h3>
+                <p data-i18n="timeOnSiteDesc">Understand how long visitors stay on your site and which pages keep them engaged.</p>
             </div>
         </div>
     </section>
@@ -84,22 +98,22 @@
             <div class="step" data-aos="fade-right" data-aos-delay="100">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <h3>Add Tracking Code</h3>
-                    <p>Copy and paste our simple tracking code into your website's HTML.</p>
+                    <h3 data-i18n="step1Title">Add Tracking Code</h3>
+                    <p data-i18n="step1Desc">Copy and paste our simple tracking code into your website's HTML.</p>
                 </div>
             </div>
             <div class="step" data-aos="fade-right" data-aos-delay="200">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <h3>Start Collecting Data</h3>
-                    <p>Our system automatically begins collecting visitor data and analytics.</p>
+                    <h3 data-i18n="step2Title">Start Collecting Data</h3>
+                    <p data-i18n="step2Desc">Our system automatically begins collecting visitor data and analytics.</p>
                 </div>
             </div>
             <div class="step" data-aos="fade-right" data-aos-delay="300">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <h3>View Insights</h3>
-                    <p>Access detailed reports and insights through your dashboard.</p>
+                    <h3 data-i18n="step3Title">View Insights</h3>
+                    <p data-i18n="step3Desc">Access detailed reports and insights through your dashboard.</p>
                 </div>
             </div>
         </div>
@@ -108,40 +122,40 @@
     <section id="pricing" class="pricing">
         <div class="pricing-grid">
             <div class="price-card" data-aos="fade-up" data-aos-delay="100">
-                <h3>Free</h3>
+                <h3 data-i18n="free">Free</h3>
                 <div class="price">$0</div>
                 <ul>
-                    <li>Basic Analytics</li>
-                    <li>Up to 1,000 visitors/month</li>
-                    <li>7-day data retention</li>
-                    <li>Basic support</li>
+                    <li data-i18n="basicAnalytics">Basic Analytics</li>
+                    <li data-i18n="upTo1000Visitors">Up to 1,000 visitors/month</li>
+                    <li data-i18n="sevenDayRetention">7-day data retention</li>
+                    <li data-i18n="basicSupport">Basic support</li>
                 </ul>
-                <a href="https://retention-backend.vercel.app/" class="btn btn-primary">Get Started</a>
+                <a href="https://retention-backend.vercel.app/" class="btn btn-primary" data-i18n="getStarted">Get Started</a>
             </div>
             <div class="price-card popular" data-aos="fade-up" data-aos-delay="200">
-                <h3>Pro</h3>
+                <h3 data-i18n="pro">Pro</h3>
                 <div class="price">$29</div>
                 <ul>
-                    <li>Advanced Analytics</li>
-                    <li>Up to 10,000 visitors/month</li>
-                    <li>30-day data retention</li>
-                    <li>Priority support</li>
-                    <li>Custom tracking events</li>
+                    <li data-i18n="advancedAnalytics">Advanced Analytics</li>
+                    <li data-i18n="upTo10000Visitors">Up to 10,000 visitors/month</li>
+                    <li data-i18n="thirtyDayRetention">30-day data retention</li>
+                    <li data-i18n="prioritySupport">Priority support</li>
+                    <li data-i18n="customTracking">Custom tracking events</li>
                 </ul>
-                <a href="https://retention-backend.vercel.app/" class="btn btn-primary">Get Started</a>
+                <a href="https://retention-backend.vercel.app/" class="btn btn-primary" data-i18n="getStarted">Get Started</a>
             </div>
             <div class="price-card" data-aos="fade-up" data-aos-delay="300">
-                <h3>Enterprise</h3>
+                <h3 data-i18n="enterprise">Enterprise</h3>
                 <div class="price">$99</div>
                 <ul>
-                    <li>Full Analytics Suite</li>
-                    <li>Unlimited visitors</li>
-                    <li>90-day data retention</li>
-                    <li>24/7 support</li>
-                    <li>Custom integrations</li>
-                    <li>API access</li>
+                    <li data-i18n="fullAnalytics">Full Analytics Suite</li>
+                    <li data-i18n="unlimitedVisitors">Unlimited visitors</li>
+                    <li data-i18n="ninetyDayRetention">90-day data retention</li>
+                    <li data-i18n="support247">24/7 support</li>
+                    <li data-i18n="customIntegrations">Custom integrations</li>
+                    <li data-i18n="apiAccess">API access</li>
                 </ul>
-                <a href="https://retention-backend.vercel.app/" class="btn btn-primary">Contact Sales</a>
+                <a href="https://retention-backend.vercel.app/" class="btn btn-primary" data-i18n="contactSales">Contact Sales</a>
             </div>
         </div>
     </section>
@@ -149,52 +163,52 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-column">
-                <h4>Product</h4>
+                <h4 data-i18n="product">Product</h4>
                 <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#features" data-i18n="features">Features</a></li>
+                    <li><a href="#pricing" data-i18n="pricing">Pricing</a></li>
+                    <li><a href="#how-it-works" data-i18n="howItWorks">How It Works</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h4>Company</h4>
+                <h4 data-i18n="company">Company</h4>
                 <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Careers</a></li>
+                    <li><a href="#" data-i18n="about">About</a></li>
+                    <li><a href="#" data-i18n="blog">Blog</a></li>
+                    <li><a href="#" data-i18n="careers">Careers</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h4>Resources</h4>
+                <h4 data-i18n="resources">Resources</h4>
                 <ul>
-                    <li><a href="#">Documentation</a></li>
-                    <li><a href="#">API Reference</a></li>
-                    <li><a href="#">Support</a></li>
+                    <li><a href="#" data-i18n="documentation">Documentation</a></li>
+                    <li><a href="#" data-i18n="apiReference">API Reference</a></li>
+                    <li><a href="#" data-i18n="support">Support</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h4>Legal</h4>
+                <h4 data-i18n="legal">Legal</h4>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#" data-i18n="privacyPolicy">Privacy Policy</a></li>
+                    <li><a href="#" data-i18n="termsOfService">Terms of Service</a></li>
+                    <li><a href="#" data-i18n="cookiePolicy">Cookie Policy</a></li>
                 </ul>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 Retention. All rights reserved.</p>
+            <p data-i18n="copyright">&copy; 2025 Retention. All rights reserved.</p>
         </div>
     </footer>
 
     <div class="cookie-popup" id="cookiePopup">
         <div class="cookie-popup-content">
             <div class="cookie-header">
-                <h3>We use cookies</h3>
-                <p>Your data will be sent to global third-party providers to identify you and send marketing messages from different companies. By clicking "Accept All", you consent to this data sharing.</p>
+                <h3 data-i18n="cookieTitle">We use cookies</h3>
+                <p data-i18n="cookieDescription">Your data will be sent to global third-party providers to identify you and send marketing messages from different companies. By clicking "Accept All", you consent to this data sharing.</p>
             </div>
             <div class="cookie-popup-buttons">
-                <button class="btn btn-secondary" onclick="showCookieSettings()">Configure</button>
-                <button class="btn btn-primary" onclick="acceptAllCookies()">Accept All</button>
+                <button class="btn btn-secondary" onclick="showCookieSettings()" data-i18n="configure">Configure</button>
+                <button class="btn btn-primary" onclick="acceptAllCookies()" data-i18n="acceptAll">Accept</button>
             </div>
         </div>
         
@@ -207,8 +221,8 @@
                             <span class="toggle-slider"></span>
                         </div>
                         <div class="cookie-text">
-                            <span class="checkbox-label">Essential Cookies</span>
-                            <span class="cookie-description">Required for the website to function properly. Cannot be disabled.</span>
+                            <span class="checkbox-label" data-i18n="essentialCookies">Essential Cookies</span>
+                            <span class="cookie-description" data-i18n="essentialCookiesDesc">Required for the website to function properly. Cannot be disabled.</span>
                         </div>
                         <i class="fas fa-shield-alt cookie-icon"></i>
                     </label>
@@ -221,8 +235,8 @@
                             <span class="toggle-slider"></span>
                         </div>
                         <div class="cookie-text">
-                            <span class="checkbox-label">Analytics Data</span>
-                            <span class="cookie-description">Your data will be sent to global third-party providers to analyze your behavior and improve our services.</span>
+                            <span class="checkbox-label" data-i18n="analyticsData">Analytics Data</span>
+                            <span class="cookie-description" data-i18n="analyticsDataDesc">Your data will be sent to global third-party providers to analyze your behavior and improve our services.</span>
                         </div>
                         <i class="fas fa-chart-line cookie-icon"></i>
                     </label>
@@ -235,8 +249,8 @@
                             <span class="toggle-slider"></span>
                         </div>
                         <div class="cookie-text">
-                            <span class="checkbox-label">Device Information</span>
-                            <span class="cookie-description">Your device data will be shared with our partners to provide personalized experiences and targeted content.</span>
+                            <span class="checkbox-label" data-i18n="deviceInfo">Device Information</span>
+                            <span class="cookie-description" data-i18n="deviceInfoDesc">Your device data will be shared with our partners to provide personalized experiences and targeted content.</span>
                         </div>
                         <i class="fas fa-mobile-alt cookie-icon"></i>
                     </label>
@@ -249,8 +263,8 @@
                             <span class="toggle-slider"></span>
                         </div>
                         <div class="cookie-text">
-                            <span class="checkbox-label">Location Data</span>
-                            <span class="cookie-description">Your location information will be used by our marketing partners to deliver region-specific content and offers.</span>
+                            <span class="checkbox-label" data-i18n="locationData">Location Data</span>
+                            <span class="cookie-description" data-i18n="locationDataDesc">Your location information will be used by our marketing partners to deliver region-specific content and offers.</span>
                         </div>
                         <i class="fas fa-map-marker-alt cookie-icon"></i>
                     </label>
@@ -263,8 +277,8 @@
                             <span class="toggle-slider"></span>
                         </div>
                         <div class="cookie-text">
-                            <span class="checkbox-label">Marketing & Advertising</span>
-                            <span class="cookie-description">Your data will be used to send you personalized marketing messages and advertisements from our trusted partners.</span>
+                            <span class="checkbox-label" data-i18n="marketing">Marketing & Advertising</span>
+                            <span class="cookie-description" data-i18n="marketingDesc">Your data will be used to send you personalized marketing messages and advertisements from our trusted partners.</span>
                         </div>
                         <i class="fas fa-bullhorn cookie-icon"></i>
                     </label>
@@ -272,8 +286,8 @@
             </div>
 
             <div class="cookie-popup-buttons">
-                <button class="btn btn-secondary" onclick="hideCookieSettings()">Back</button>
-                <button class="btn btn-primary" onclick="savePreferences()">Save Preferences</button>
+                <button class="btn btn-secondary" onclick="hideCookieSettings()" data-i18n="back">Back</button>
+                <button class="btn btn-primary" onclick="savePreferences()" data-i18n="savePreferences">Save Preferences</button>
             </div>
         </div>
     </div>
@@ -286,6 +300,50 @@
             once: true,
             offset: 100
         });
+
+        // Language switcher functionality
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang;
+            
+            // Update selected language text
+            document.getElementById('selectedLanguage').textContent = lang === 'en' ? 'English' : 'العربية';
+            
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'INPUT' && element.type === 'submit') {
+                        element.value = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            // Close dropdown
+            document.getElementById('languageOptions').classList.remove('show');
+            
+            // Save language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Toggle language dropdown
+        function toggleLanguageDropdown() {
+            document.getElementById('languageOptions').classList.toggle('show');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.querySelector('.custom-select');
+            if (!dropdown.contains(event.target)) {
+                document.getElementById('languageOptions').classList.remove('show');
+            }
+        });
+
+        // Load saved language preference
+        const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+        document.getElementById('selectedLanguage').textContent = savedLanguage === 'en' ? 'English' : 'العربية';
+        changeLanguage(savedLanguage);
 
         // Mobile menu functionality
         function toggleMenu() {
