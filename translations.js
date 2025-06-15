@@ -67,7 +67,7 @@ const translations = {
         
         // Cookie Popup
         cookieTitle: "We use cookies",
-        cookieDescription: "Your data will be sent to global third-party providers to identify you and send marketing messages from different companies. By clicking \"Accept All\", you consent to this data sharing.",
+        cookieDescription: "Your data will be sent to global third-party providers to identify you and send marketing messages from different companies. By clicking \"Accept\", you consent to this data sharing.",
         configure: "Configure",
         acceptAll: "Accept",
         back: "Back",
@@ -151,7 +151,7 @@ const translations = {
         
         // Cookie Popup
         cookieTitle: "نحن نستخدم ملفات تعريف الارتباط",
-        cookieDescription: "سيتم إرسال بياناتك إلى مزودي الطرف الثالث العالميين لتحديد هويتك وإرسال رسائل تسويقية من شركات مختلفة. بالنقر على \"قبول الكل\"، فإنك توافق على مشاركة هذه البيانات.",
+        cookieDescription: "سيتم إرسال بياناتك إلى مزودي الطرف الثالث العالميين لتحديد هويتك وإرسال رسائل تسويقية من شركات مختلفة. بالنقر على \"قبول\"، فإنك توافق على مشاركة هذه البيانات.",
         configure: "ضبط",
         acceptAll: "قبول",
         back: "رجوع",
